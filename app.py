@@ -29,8 +29,8 @@ with kolom2 :
 # membuat fungsi untuk memprediksi diabetes berdasarkan input user
 diabetes_diagnosis = ''
 
-#tombol prediksi
-if (st.button('Prediksi Diabetes')):
+# tombol prediksi
+if st.button('Prediksi Diabetes'):
     diabetes_prediction = diabetes_model.predict([[
         Pregnancies,
         Glucose,
@@ -42,10 +42,10 @@ if (st.button('Prediksi Diabetes')):
         Age
     ]])
 
-    if(diabetes_prediction[0] == 1):
+    if diabetes_prediction[0] == 1:
         diabetes_diagnosis = 'Pasien Terkena Diabetes'
-    else :
+    else:
         diabetes_diagnosis = 'Pasien Tidak Terkena Diabetes'
 
-        st.success(diabetes_diagnosis)
-        
+# menampilkan hasil prediksi di luar blok if-else
+st.success(diabetes_diagnosis)
